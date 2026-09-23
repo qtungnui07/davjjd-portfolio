@@ -35,7 +35,7 @@ function creativePortfolioCleanupPlugin() {
   return {
     name: 'creative-portfolio-cleanup',
     transform(code, id) {
-      if (!id.endsWith('CreativePortfolioTemplatePage-CTUjLTPI.js')) {
+      if (!id.endsWith('CreativePortfolioTemplatePage.js')) {
         return null;
       }
 
@@ -48,15 +48,33 @@ function creativePortfolioCleanupPlugin() {
         );
 
       const contentReplacements = [
-        ['https://storage.googleapis.com/webild/default/templates/creative-portfolio/screen-1.webp', '/flashcards/miku-sky.jpg'],
-        ['https://storage.googleapis.com/webild/default/templates/creative-portfolio/screen-2.webp', '/flashcards/miku-ribbon.jpg'],
-        ['https://storage.googleapis.com/webild/default/templates/creative-portfolio/screen-3.webp', '/flashcards/miku-library.jpg'],
-        ['https://storage.googleapis.com/webild/default/templates/creative-portfolio/avatar.webp', '/webild/default/templates/creative-portfolio/avatar.webp'],
-        ['© 2026 Joseph Alexander. All rights reserved.', 'Copyright 2026 davjjd. Website by qtitpc.'],
+        [
+          'https://storage.googleapis.com/webild/default/templates/creative-portfolio/screen-1.webp',
+          '/flashcards/miku-sky.jpg',
+        ],
+        [
+          'https://storage.googleapis.com/webild/default/templates/creative-portfolio/screen-2.webp',
+          '/flashcards/miku-ribbon.jpg',
+        ],
+        [
+          'https://storage.googleapis.com/webild/default/templates/creative-portfolio/screen-3.webp',
+          '/flashcards/miku-library.jpg',
+        ],
+        [
+          'https://storage.googleapis.com/webild/default/templates/creative-portfolio/avatar.webp',
+          '/webild/default/templates/creative-portfolio/avatar.webp',
+        ],
+        [
+          '© 2026 Joseph Alexander. All rights reserved.',
+          'Copyright 2026 davjjd. Website by qtitpc.',
+        ],
         ['1 spot left this month', 'Vietnam'],
         ['Design that', 'Hi there!'],
         ['commands attention.', "I'm Davjjd"],
-        ["I don't design to decorate — I design to solve. Sharp, intentional work that moves brands forward.", "Hi, I'm davjjd. An English major bridging the gap between language studies, gaming, and streaming."],
+        [
+          "I don't design to decorate — I design to solve. Sharp, intentional work that moves brands forward.",
+          "Hi, I'm davjjd. An English major bridging the gap between language studies, gaming, and streaming.",
+        ],
         ['Joseph Alexander', 'davjjd'],
         ['Alexander', 'davjjd'],
       ];

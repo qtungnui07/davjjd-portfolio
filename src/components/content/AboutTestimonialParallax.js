@@ -1,0 +1,107 @@
+import { o as e, t } from '../../lib/jsxRuntime.js';
+import { t as n } from '../../lib/react.js';
+import { C as r } from '../../lib/lucideReact.js';
+import { t as i } from '../../lib/framerMotion.js';
+import { t as a } from '../../hooks/useScroll.js';
+import { t as o } from '../../hooks/useTransform.js';
+import { t as s } from '../../hooks/useButtonClick.js';
+import { t as c } from '../animation/TextAnimation.js';
+import { t as l } from './ImageOrVideo.js';
+import { t as u } from '../../utils/resolveIcon.js';
+var d = e(n(), 1),
+  f = t(),
+  p = ({ icon: e, label: t, href: n, onClick: r }) => {
+    let i = u(e);
+    return (0, f.jsxs)(`a`, {
+      href: n,
+      onClick: s(n, r),
+      className: `flex items-center justify-center gap-2 h-9 px-3 text-sm rounded-full cursor-pointer backdrop-blur-xl bg-primary-cta-text/15 border border-primary-cta-text/20 text-primary-cta-text font-medium hover:bg-primary-cta-text/25 transition-all duration-300 ease-out`,
+      children: [
+        (0, f.jsx)(i, { className: `size-4`, strokeWidth: 1.5 }),
+        (0, f.jsx)(`span`, { children: t }),
+      ],
+    });
+  },
+  m = ({
+    tag: e,
+    quote: t,
+    author: n,
+    role: s,
+    imageSrc: u,
+    videoSrc: m,
+    socialLinks: h,
+    textAnimation: g,
+  }) => {
+    let _ = (0, d.useRef)(null),
+      { scrollYProgress: v } = a({ target: _, offset: [`start end`, `end start`] }),
+      y = o(v, [0, 0.6], [1.3, 1]);
+    return (0, f.jsx)(`section`, {
+      'aria-label': `About section`,
+      className: `py-20`,
+      children: (0, f.jsxs)(`div`, {
+        className: `grid grid-cols-1 md:grid-cols-5 gap-5 mx-auto w-content-width`,
+        children: [
+          (0, f.jsxs)(`div`, {
+            className: `relative md:col-span-3 p-10 md:p-20 card rounded`,
+            children: [
+              (0, f.jsx)(`div`, {
+                className: `absolute flex items-center justify-center -top-7 -left-7 md:-top-8 md:-left-8 size-14 md:size-16 primary-button rounded`,
+                children: (0, f.jsx)(r, {
+                  className: `h-5/10 text-primary-cta-text`,
+                  strokeWidth: 1.5,
+                }),
+              }),
+              (0, f.jsxs)(`div`, {
+                className: `relative flex flex-col justify-center gap-5 h-full`,
+                children: [
+                  (0, f.jsx)(`div`, {
+                    className: `w-fit px-3 py-1 mb-1 text-sm card rounded`,
+                    children: (0, f.jsx)(`p`, { children: e }),
+                  }),
+                  (0, f.jsx)(c, {
+                    text: t,
+                    variant: g,
+                    gradientText: !1,
+                    tag: `h1`,
+                    className: `text-4xl md:text-5xl leading-[1.15] font-semibold text-balance`,
+                  }),
+                  (0, f.jsxs)(`div`, {
+                    className: `flex items-center gap-2 min-w-0`,
+                    children: [
+                      (0, f.jsx)(`span`, {
+                        className: `text-base font-medium truncate`,
+                        children: n,
+                      }),
+                      (0, f.jsx)(`span`, { className: `text-accent shrink-0`, children: `•` }),
+                      (0, f.jsx)(`span`, {
+                        className: `text-base font-medium truncate`,
+                        children: s,
+                      }),
+                    ],
+                  }),
+                ],
+              }),
+            ],
+          }),
+          (0, f.jsxs)(`div`, {
+            ref: _,
+            className: `p-px md:col-span-2 aspect-square md:aspect-auto md:h-full card rounded overflow-hidden relative`,
+            children: [
+              (0, f.jsx)(i.div, {
+                style: { scale: y },
+                className: `w-full h-full origin-center`,
+                children: (0, f.jsx)(l, { imageSrc: u, videoSrc: m }),
+              }),
+              h &&
+                h.length > 0 &&
+                (0, f.jsx)(`div`, {
+                  className: `absolute inset-x-0 bottom-0 flex flex-wrap items-end justify-center gap-3 p-6 xl:p-7 2xl:p-8`,
+                  children: h.map((e, t) => (0, f.jsx)(p, { ...e }, t)),
+                }),
+            ],
+          }),
+        ],
+      }),
+    });
+  };
+export { m as t };

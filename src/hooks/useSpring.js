@@ -1,0 +1,75 @@
+import { o as e } from '../lib/jsxRuntime.js';
+import { t } from '../lib/react.js';
+import { M as n, _ as r, r as i, w as a } from '../lib/framerMotion.js';
+import { r as o, t as s } from './useTransform.js';
+function c(e, t, i = {}) {
+  let o = e.get(),
+    s = null,
+    c = o,
+    d,
+    f = typeof o == `string` ? o.replace(/[\d.-]/g, ``) : void 0,
+    p = () => {
+      ((s &&= (s.stop(), null)), (e.animation = void 0));
+    },
+    m = () => {
+      let t = u(e.get()),
+        n = u(c);
+      if (t === n) {
+        p();
+        return;
+      }
+      let r = s ? s.getGeneratorVelocity() : e.getVelocity();
+      (p(),
+        (s = new a({
+          keyframes: [t, n],
+          velocity: r,
+          type: `spring`,
+          restDelta: 0.001,
+          restSpeed: 0.01,
+          ...i,
+          onUpdate: d,
+        })));
+    },
+    h = () => {
+      (m(),
+        (e.animation = s ?? void 0),
+        e.events.animationStart?.notify(),
+        s?.then(() => {
+          ((e.animation = void 0), e.events.animationComplete?.notify());
+        }));
+    };
+  if (
+    (e.attach((e, t) => {
+      ((c = e), (d = (e) => t(l(e, f))), n.postRender(h));
+    }, p),
+    r(t))
+  ) {
+    let n = i.skipInitialAnimation === !0,
+      r = t.on(`change`, (t) => {
+        n ? ((n = !1), e.jump(l(t, f), !1)) : e.set(l(t, f));
+      }),
+      a = e.on(`destroy`, r);
+    return () => {
+      (r(), a());
+    };
+  }
+  return p;
+}
+function l(e, t) {
+  return t ? e + t : e;
+}
+function u(e) {
+  return typeof e == `number` ? e : parseFloat(e);
+}
+var d = e(t(), 1);
+function f(e, t = {}) {
+  let { isStatic: n } = (0, d.useContext)(i),
+    a = () => (r(e) ? e.get() : e);
+  if (n) return s(a);
+  let l = o(a());
+  return ((0, d.useInsertionEffect)(() => c(l, e, t), [l, JSON.stringify(t)]), l);
+}
+function p(e, t = {}) {
+  return f(e, { type: `spring`, ...t });
+}
+export { p as t };

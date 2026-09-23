@@ -17,6 +17,11 @@ section[aria-label="FAQ section"],
   display: none;
 }
 
+/* Hide the legacy "View all my projects" CTA below the grid. */
+#work > section > div > div.flex.justify-center {
+  display: none;
+}
+
 /* Replace the old contact CTA with the compact social-button row. */
 .hero-socials {
   display: flex;
@@ -26,21 +31,54 @@ section[aria-label="FAQ section"],
 }
 
 .hero-socials a {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   padding: 0.7rem 1rem;
-  border: 1px solid rgba(23, 23, 23, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.92);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.72);
-  box-shadow: 0 0.75rem 1.5rem rgba(23, 23, 23, 0.07);
+  background:
+    radial-gradient(circle at 20% 0%, rgba(255, 255, 255, 0.98), transparent 48%),
+    linear-gradient(125deg, rgba(188, 218, 255, 0.72), rgba(255, 255, 255, 0.52) 50%, rgba(225, 203, 255, 0.68));
+  backdrop-filter: blur(18px) saturate(175%);
+  -webkit-backdrop-filter: blur(18px) saturate(175%);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 1),
+    inset 0 -2px 3px rgba(118, 148, 190, 0.16),
+    0 0.85rem 1.8rem rgba(97, 122, 166, 0.2);
   color: var(--foreground);
   font-size: 0.9rem;
   line-height: 1;
   text-decoration: none;
-  transition: transform 180ms ease, box-shadow 180ms ease;
+  text-shadow: 0 1px rgba(255, 255, 255, 0.7);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.hero-socials a::before {
+  position: absolute;
+  z-index: -1;
+  top: -140%;
+  left: -25%;
+  width: 72%;
+  height: 260%;
+  border-radius: 50%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.72), transparent);
+  content: '';
+  transform: rotate(24deg);
+  transition: transform 500ms ease;
 }
 
 .hero-socials a:hover {
   transform: translateY(-2px);
-  box-shadow: 0 1rem 1.75rem rgba(23, 23, 23, 0.12);
+  border-color: rgba(255, 255, 255, 1);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 1),
+    inset 0 -2px 3px rgba(118, 148, 190, 0.2),
+    0 1.15rem 2rem rgba(97, 122, 166, 0.28);
+}
+
+.hero-socials a:hover::before {
+  transform: translateX(190%) rotate(24deg);
 }
 
 /* Keep the greeting and name on their own lines. */
