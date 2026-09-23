@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'Coolvetica';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Coolvetica'), url('https://fonts.cdnfonts.com/s/27610/coolvetica compressed rg.woff') format('woff');
+}
+@font-face {
+    font-family: 'Coolvetica';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Coolvetica'), url('https://fonts.cdnfonts.com/s/27610/coolvetica condensed rg.woff') format('woff');
+}
+@font-face {
+    font-family: 'Coolvetica';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Coolvetica'), url('https://fonts.cdnfonts.com/s/27610/coolvetica crammed rg.woff') format('woff');
+}
+@font-face {
+    font-family: 'Coolvetica';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Coolvetica'), url('https://fonts.cdnfonts.com/s/27610/coolvetica rg.woff') format('woff');
+}
+@font-face {
+    font-family: 'Coolvetica';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Coolvetica'), url('https://fonts.cdnfonts.com/s/27610/coolvetica rg it.woff') format('woff');
+}
+
+

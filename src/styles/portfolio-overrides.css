@@ -1,0 +1,107 @@
+/* Hide platform and template-owner branding from the portfolio homepage. */
+#root > button.fixed[class~="z-99999"],
+nav[data-section="navbar"] {
+  display: none !important;
+}
+
+/* The reference flow contains only Hero, Projects, About, and Footer. */
+section[aria-label="Testimonials section"],
+#services,
+section[aria-label="FAQ section"],
+#contact {
+  display: none !important;
+}
+
+/* The Projects heading starts directly with its title in the reference. */
+#work > section > div > div:first-child > div:first-child {
+  display: none;
+}
+
+/* Replace the old contact CTA with the compact social-button row. */
+.hero-socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 0.5rem;
+}
+
+.hero-socials a {
+  padding: 0.7rem 1rem;
+  border: 1px solid rgba(23, 23, 23, 0.05);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 0.75rem 1.5rem rgba(23, 23, 23, 0.07);
+  color: var(--foreground);
+  font-size: 0.9rem;
+  line-height: 1;
+  text-decoration: none;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.hero-socials a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 1rem 1.75rem rgba(23, 23, 23, 0.12);
+}
+
+/* Keep the greeting and name on their own lines. */
+#hero h1 > span > span {
+  display: block;
+  color: var(--foreground);
+}
+
+/* A consistent Vietnam flag, independent of the device emoji font. */
+#hero .vietnam-flag {
+  display: inline-block;
+  width: 1rem;
+  height: auto;
+  margin-right: 0.3rem;
+}
+
+#hero .card:has(.vietnam-flag),
+#hero .card:has(.vietnam-flag) p {
+  white-space: nowrap;
+}
+
+#hero .card:has(.vietnam-flag) p {
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+
+/* The loader is intentionally background-only: no avatar or name. */
+.fixed.inset-0.z-100 > .relative.z-2 {
+  display: none;
+}
+
+/* About in the reference is a clean text/image pair. */
+section[aria-label="About section"] .relative.flex.flex-col.justify-center.gap-5.h-full > :last-child,
+section[aria-label="About section"] .absolute.inset-x-0.bottom-0 {
+  display: none !important;
+}
+
+/* The footer carries the wordmark and copyright only. */
+footer .flex.items-center.gap-3 > button {
+  display: none;
+}
+
+#hero img[src="/flashcards/miku-sky.jpg"],
+#work img[src="/flashcards/miku-sky.jpg"] {
+  object-position: center 38%;
+}
+
+#hero img[src="/flashcards/miku-ribbon.jpg"],
+#work img[src="/flashcards/miku-ribbon.jpg"] {
+  object-position: center 35%;
+}
+
+#hero img[src="/flashcards/miku-library.jpg"],
+#work img[src="/flashcards/miku-library.jpg"] {
+  object-position: center 42%;
+}
+
+/* The navbar used to reserve this area on small screens. */
+@media (max-width: 767px) {
+  #hero > section {
+    padding-top: 5rem;
+  }
+}

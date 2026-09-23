@@ -1,0 +1,3 @@
+var e=e=>{if(e.message&&e.message.trim())return e.message.trim();if(e.formData&&Object.keys(e.formData).length>0){if(e.formData.message&&e.formData.message.trim())return e.formData.message.trim();let t=[];if(Object.entries(e.formData).forEach(([e,n])=>{if(n&&n.trim()){let r=e.charAt(0).toUpperCase()+e.slice(1).replace(/([A-Z])/g,` $1`);t.push(`${r}: ${n.trim()}`)}}),t.length>0)return t.join(`
+
+`)}return`A new contact form submission has been received.`},t=async t=>{throw e(t),t.formData?.email||t.email,Error(`VITE_API_URL and VITE_PROJECT_ID must be set`)};export{t};
