@@ -1,8 +1,8 @@
 const socialLinks = [
-  ['Discord', '#'],
-  ['Facebook', '#'],
-  ['Instagram', '#'],
-  ['osu!', '#'],
+  ['Facebook', 'https://www.facebook.com/share/14pdYryv1HM/'],
+  ['YouTube', 'https://www.youtube.com/@davjiid'],
+  ['Instagram', 'https://www.instagram.com/rdavjd/'],
+  ['osu!', 'https://osu.ppy.sh/users/34537896'],
 ];
 
 function addSocialLinks() {
@@ -20,6 +20,8 @@ function addSocialLinks() {
   for (const [label, href] of socialLinks) {
     const link = document.createElement('a');
     link.href = href;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
     link.textContent = label;
     socialRow.append(link);
   }
