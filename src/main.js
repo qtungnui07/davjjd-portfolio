@@ -428,7 +428,7 @@ const __vite__mapDeps = (
       'src/ProductPage-BHps19eh.js',
       'src/BlogPage-CJ9eilLd.js',
     ]),
-) => i.map((i) => d[i]);
+) => [];
 import { n as e, o as t, t as n } from './lib/jsxRuntime.js';
 import { t as r } from './lib/react.js';
 import { a as i, i as a, l as o, n as s, r as c, t as l } from './lib/reactRouter.js';
