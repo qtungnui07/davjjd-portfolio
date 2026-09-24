@@ -12,7 +12,6 @@ import { t as u } from '../components/content/TestimonialTrustCard.js';
 import { t as d } from '../components/layout/StyleProvider.js';
 import { t as f } from '../components/layout/SiteBackgroundSlot.js';
 import { t as p } from '../components/layout/NavbarFloatingLogo.js';
-import { t as m } from '../components/layout/LoaderReveal.js';
 var h = e();
 function g() {
   return (0, h.jsx)(n, {
@@ -22,10 +21,6 @@ function g() {
       heroBackground: `none`,
       buttonVariant: `stagger`,
       children: [
-        (0, h.jsx)(m, {
-          imageSrc: `https://storage.googleapis.com/webild/default/templates/creative-portfolio/avatar.webp`,
-          title: `Joseph Alexander`,
-        }),
         (0, h.jsx)(f, {}),
         (0, h.jsx)(c, { position: `fixed` }),
         (0, h.jsx)(t.div, {
