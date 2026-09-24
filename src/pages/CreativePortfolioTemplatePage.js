@@ -1,4 +1,5 @@
 import { t as e } from '../lib/jsxRuntime.js';
+import '../styles/creative-portfolio.generated.css';
 import { t } from '../lib/framerMotion.js';
 import { t as n } from '../lib/lenisReact.js';
 import { t as r } from '../components/content/AboutTestimonialParallax.js';
@@ -12,6 +13,7 @@ import { t as u } from '../components/content/TestimonialTrustCard.js';
 import { t as d } from '../components/layout/StyleProvider.js';
 import { t as f } from '../components/layout/SiteBackgroundSlot.js';
 import { t as p } from '../components/layout/NavbarFloatingLogo.js';
+import { t as m } from '../components/layout/LoaderReveal.js';
 var h = e();
 function g() {
   return (0, h.jsx)(n, {
@@ -21,6 +23,10 @@ function g() {
       heroBackground: `none`,
       buttonVariant: `stagger`,
       children: [
+        (0, h.jsx)(m, {
+          imageSrc: `/44d0242d-7f8d-4fce-9a75-6a15a447ef71.jpg`,
+          title: `davjjd`,
+        }),
         (0, h.jsx)(f, {}),
         (0, h.jsx)(c, { position: `fixed` }),
         (0, h.jsx)(t.div, {
