@@ -66,19 +66,19 @@ function g() {
             {
               title: `Listening to Music`,
               description: `Finding new songs and enjoying the music that matches my mood.`,
-              imageSrc: `https://storage.googleapis.com/webild/default/templates/creative-portfolio/screen-1.webp`,
+              imageSrc: `/hobbies/84e54587838b02301062837c68996c4f.jpg`,
               tag: `Music`,
             },
             {
               title: `Playing Games`,
               description: `Relaxing, challenging myself, and sharing fun moments through games.`,
-              imageSrc: `https://storage.googleapis.com/webild/default/templates/creative-portfolio/screen-2.webp`,
+              imageSrc: `/hobbies/270ee123e8819c8e7ca3f6739495a043.jpg`,
               tag: `Gaming`,
             },
             {
               title: `Exploring and Discovering`,
               description: `Staying curious and discovering new places, ideas, and experiences.`,
-              imageSrc: `https://storage.googleapis.com/webild/default/templates/creative-portfolio/screen-3.webp`,
+              imageSrc: `/hobbies/thorium_mq3DD1jQ8r.png`,
               tag: `Exploration`,
             },
           ],
